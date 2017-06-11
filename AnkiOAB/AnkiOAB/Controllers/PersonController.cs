@@ -29,13 +29,13 @@ namespace AnkiOAB.Controllers
             
         //}
 
-        // GET: api/Person/1
-        public string Get(int Id)
+        // GET: api/Person/string
+        public string Get(string id)
         {
             try
             {
-                Cmd = new SqlCommand("select * from Usuario WHERE CodUsuario=@v1", Con);
-                Cmd.Parameters.AddWithValue("@v1", Id);
+                Cmd = new SqlCommand("select * from Usuario WHERE Email=@v1", Con);
+                Cmd.Parameters.AddWithValue("@v1", id);
                 Dr = Cmd.ExecuteReader();
                 Usuario u = null;
 
